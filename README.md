@@ -14,53 +14,6 @@ A document-based AI assistant built using Streamlit and Gemini 2.5 Flash. Upload
 - 💾 **Memory Management** – Maintains summary and recent Q&A history for better context
 
 ---
-
-## 🧰 Technologies Used
-
-- [Streamlit](https://streamlit.io/) – for building the web app
-- [Google Gemini API](https://ai.google.dev/) – for text generation and reasoning
-- [PyPDF2](https://pypi.org/project/PyPDF2/) – for PDF text extraction
-- [python-dotenv](https://pypi.org/project/python-dotenv/) – for environment variable management
-
----
-
-## ⚙️ Setup Instructions
-
-### 1. **Clone the repository**
-
-```bash
-git clone https://github.com/yourusername/gemini-research-assistant.git
-cd gemini-research-assistant
-
-python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
-```
-
-### 2. **Create a virtual environment (recommended)**
-```
-python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
-```
-
-### 3. **Install dependencies**
-
-```
-pip install -r requirements.txt
-```
-
-### 4. **Add your Gemini API Key**
-
-Create a .env file in the root directory:
-```
-GEMINI_API_KEY=your_google_gemini_api_key
-```
-### 5. **Run the application**
-
-```
-streamlit run app.py
-```
-Then open http://localhost:8501 in your browser.
-
 ## 🧠 Architecture / Reasoning Flow
 
 This app uses a **modular, memory-aware reasoning architecture** powered by Google Gemini 2.5 Flash and Streamlit.
@@ -120,4 +73,47 @@ This app uses a **modular, memory-aware reasoning architecture** powered by Goog
   - `recent`: Last two verified Q&A pairs
 - Ensures follow-up queries are **context-aware** but not hallucinated.
 
+---
 
+## 🧰 Technologies Used
+
+- [Streamlit](https://streamlit.io/) – for building the web app
+- [Google Gemini API](https://ai.google.dev/) – for text generation and reasoning
+- [PyPDF2](https://pypi.org/project/PyPDF2/) – for PDF text extraction
+- [python-dotenv](https://pypi.org/project/python-dotenv/) – for environment variable management
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. **Clone the repository**
+
+```bash
+git clone https://github.com/yourusername/gemini-research-assistant.git
+cd gemini-research-assistant
+```
+
+### 2. **Create a virtual environment (recommended)**
+```
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+```
+
+### 3. **Install dependencies**
+
+```
+pip install -r requirements.txt
+```
+
+### 4. **Add your Gemini API Key**
+
+Create a .env file in the root directory:
+```
+GEMINI_API_KEY=your_google_gemini_api_key
+```
+### 5. **Run the application**
+
+```
+streamlit run app.py
+```
+Then open http://localhost:8501 in your browser.
