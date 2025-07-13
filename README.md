@@ -61,3 +61,63 @@ streamlit run app.py
 ```
 Then open http://localhost:8501 in your browser.
 
+## 🧠 Architecture / Reasoning Flow
+
+This app uses a **modular, memory-aware reasoning architecture** powered by Google Gemini 2.5 Flash and Streamlit.
+
+### 1. 📄 Document Upload & Parsing
+- Users upload a `.pdf` or `.txt` file.
+- File is parsed using:
+  - `PyPDF2` for PDFs (text-based only)
+  - UTF-8 decoding for TXT files
+- File size capped at **10MB** to stay within processing limits.
+
+---
+
+### 2. 📝 Auto-Summary
+- Once uploaded, a **150-word summary** is generated using Gemini:
+  - Prompted with the first ~30,000 characters of the document
+  - Provides a high-level overview of key content
+
+---
+
+### 3. 🔎 Ask Anything (Document Q&A)
+- Users ask natural-language questions about the document.
+- The model prompt includes:
+  - 🧾 **Primary source** (first ~15,000 chars of document)
+  - 🧠 **Conversation context**: summary + last 2 verified Q&A pairs
+- Gemini is instructed to:
+  - **Answer strictly based on the document**
+  - Use memory only to understand follow-ups — not as a fact source
+
+#### ✔️ Verification & Justification
+1. Gemini's answer is validated:
+   - Prompted again to confirm: "Is this directly supported by the source?"
+2. If supported:
+   - A **direct quote** is extracted from the source text to justify the answer
+   - The answer + quote is shown to the user
+   - It’s stored in memory for context in future prompts
+3. If not supported:
+   - The system returns: _"I couldn't find supporting evidence in the document"_
+
+---
+
+### 4. 🧠 Challenge Me (Comprehension Test)
+- Clicking “Generate Questions” prompts Gemini to create 3 QA pairs.
+- Users write their own answers.
+- Gemini evaluates responses using 5 criteria:
+  1. **DOCUMENT RELEVANCE**: Does the question relate to the document?
+  2. **ANSWER ACCURACY**: Correct / Partially Correct / Incorrect
+  3. **SCORE**: 1–10
+  4. **TEXT EVIDENCE**: Direct quote (if any)
+  5. **SUGGESTIONS**: Feedback for improving alignment
+
+---
+
+### 5. 💾 Memory Management (Stateful Context)
+- Stored in `st.session_state.memory`
+  - `summary`: Current document summary (auto-updated)
+  - `recent`: Last two verified Q&A pairs
+- Ensures follow-up queries are **context-aware** but not hallucinated.
+
+
