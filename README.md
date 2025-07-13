@@ -23,3 +23,41 @@ A document-based AI assistant built using Streamlit and Gemini 2.5 Flash. Upload
 - [python-dotenv](https://pypi.org/project/python-dotenv/) – for environment variable management
 
 ---
+
+## ⚙️ Setup Instructions
+
+### 1. **Clone the repository**
+
+```bash
+git clone https://github.com/yourusername/gemini-research-assistant.git
+cd gemini-research-assistant
+
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+```
+
+### 2. **Create a virtual environment (recommended)**
+```
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+```
+
+### 3. **Install dependencies**
+
+```
+pip install -r requirements.txt
+```
+
+### 4. **Add your Gemini API Key**
+
+Create a .env file in the root directory:
+```
+GEMINI_API_KEY=your_google_gemini_api_key
+```
+### 5. **Run the application**
+
+```
+streamlit run app.py
+``
+Then open http://localhost:8501 in your browser.
+
