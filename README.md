@@ -58,6 +58,6 @@ GEMINI_API_KEY=your_google_gemini_api_key
 
 ```
 streamlit run app.py
-``
+```
 Then open http://localhost:8501 in your browser.
 
