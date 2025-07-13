@@ -1,1 +1,1 @@
-# Pdf Txt Summary Chat Bot
+Gemini Research Assistant
