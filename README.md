@@ -99,7 +99,8 @@ pip install -r requirements.txt
 
 ### 4. **Add your Gemini API Key**
 ```
-Create a .env file in the root directory:
+Create a '.env' file in the root directory:
+
 ```env
 GEMINI_API_KEY=your_google_gemini_api_key
 ```
