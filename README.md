@@ -25,8 +25,6 @@ This app uses a **modular, memory-aware reasoning architecture** powered by Goog
   - UTF-8 decoding for TXT files
 - File size capped at **10MB** to stay within processing limits.
 
----
-
 ### 2. 📝 Auto-Summary
 - Once uploaded, a **150-word summary** is generated using Gemini:
   - Prompted with the first ~30,000 characters of the document
