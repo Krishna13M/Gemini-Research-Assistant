@@ -4,6 +4,7 @@ A document-based AI assistant built using Streamlit and Gemini 2.5 Flash. Upload
 ---
 ## 🔍 Upload UI
 ![Upload UI](assets/Gemini-Assistant-UI.png)
+
 ![With File](assets/Gemini-Research-Assitant-UI.png)
 
 ## 🧠 Challenge Me UI
