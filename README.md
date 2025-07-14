@@ -3,7 +3,7 @@
 A document-based AI assistant built using Streamlit and Gemini 2.5 Flash. Upload a PDF or TXT file, ask questions about it, challenge yourself with comprehension tests, and ensure every answer is grounded in the original document.
 ---
 ## 🔍 Upload UI
-![Upload UI](assets/Gemini-Assitant-UI.png)
+![Upload UI](assets/Gemini-Assistant-UI.png)
 ![With File](assets/Gemini-Research-Assitant-UI.png)
 
 ## 🧠 Challenge Me UI
